@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    background: #e3c5c5;
+    max-width: 100%;
+}
+
+.buttons button {
+    margin: 30px;
+    color: #fff;
+    background: darkred;
+    padding: 10px;
+    border-radius: 10px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+#box {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    color: #fff;
+    /* display: flex; */
+    /* align-items: flex-end; */
+    /* flex-direction: column; */
+    padding: 20px;
+    /* overflow: hidden; */
+    /* margin-top: 20px; */
+}
+
+.toast {
+    background-color: #fff;
+    color: #000;
+    min-width: 100px;
+    height: 50px;
+    padding: 15px;
+    /* border-radius: 10px; */
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    position: relative;
+    transform: translateX(17%);
+    animation: moveleft 0.5s linear forwards;
+}
+
+@keyframes moveleft {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.toast i {
+    color: green;
+    font-size: 20px;
+}
+
+.toast.error i {
+    color: red;
+}
+
+.toast.invalid i {
+    color: yellow;
+    /* background-color: orangered; */
+}
+
+.toast::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: green;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 10px;
+    animation: anim 6s linear forwards;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+
+.toast.invalid::after {
+    background-color: yellow;
+}
+
+.toast.error::after {
+    background-color: red;
+}
